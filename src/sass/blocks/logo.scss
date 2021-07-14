@@ -1,0 +1,29 @@
+.logo {
+  display: grid;
+  grid-template-areas:
+    "picture avto"
+    "picture moto";
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+
+  width: 150px;
+}
+
+.logo__img {
+  grid-area: picture;
+}
+
+.logo__avto {
+  grid-area: avto;
+  align-self: end;
+  font-size: 18px;
+  line-height: 25px;
+  font-weight: bold;
+}
+
+.logo__moto {
+  grid-area: moto;
+  align-self: start;
+  font-size: 14px;
+  line-height: 19px;
+}

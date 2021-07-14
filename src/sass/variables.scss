@@ -1,21 +1,25 @@
 // Colors
 
-$bg-red: #D12136;
-$bg-red-hover: #BD0C21;
+$bg-white: #ffffff;
+$bg-grey: #f5f5f9;
+$bg-red: #d12136;
+$bg-red-hover: #bd0c21;
 
-$font-grey-dark: #48494D;
-$font-black: #1A212F;
+$font-grey-dark: #48494d;
+$font-grey-light: rgba(72, 73, 77, 0.5);
+$font-black: #1a212f;
 $font-blackest: #000000;
-$font-white: #FFFFFF;
-$font-red: #D12136;
+$font-white: #ffffff;
+$font-red: #d12136;
 
-$additional-color: #D7D9DF;
-
+$decor-grey: #d7d9df;
 
 // Fonts
 
 $font-family: "Open Sans", "Arial", sans-serif;
+$fs-default: 16px;
+$lh-default: 22px;
 
 // Sizes
 
-$desktop-width: 1024px;
+$max-width: 1170px;

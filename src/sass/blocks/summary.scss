@@ -1,0 +1,128 @@
+.summary {
+  display: flex;
+  flex-direction: column;
+}
+
+.summary__title {
+  margin: 0;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 41px;
+
+  margin-bottom: 30px;
+}
+
+.summary__list {
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  align-items: baseline;
+
+  margin-bottom: 37px;
+}
+
+.summary__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0.5;
+
+  &:not(:last-of-type) {
+    margin-right: 12px;
+  }
+}
+
+.summary__cost-wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 37px;
+}
+
+.summary__cost {
+  margin: 0;
+  font-weight: bold;
+  font-size: 35px;
+  line-height: 48px;
+  margin-right: 30px;
+}
+
+.summary__previous-cost {
+  margin: 0;
+  font-size: 20px;
+  line-height: 27px;
+  color: $font-grey-light;
+  position: relative;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    border-bottom: 1px solid $font-grey-light;
+    transform: rotate(-4deg);
+
+    left: 0;
+    bottom: 12px;
+  }
+}
+
+.summary__button {
+  display: flex;
+  margin-right: auto;
+  font-size: 14px;
+  line-height: 19px;
+  text-transform: uppercase;
+
+  padding-left: 20px;
+  padding-right: 45px;
+  padding-bottom: 16px;
+  padding-top: 16px;
+}
+
+.summary__item--fuel {
+  &::before {
+    content: url("../../img/icons/fuel-icon.svg");
+    display: block;
+    width: 24px;
+    height: 28px;
+  }
+}
+
+.summary__item--transmission {
+  &::before {
+    content: url("../../img/icons/transmission-icon.svg");
+    display: block;
+    width: 26px;
+    height: 29px;
+  }
+}
+
+.summary__item--horsepower {
+  &::before {
+    content: url("../../img/icons/horsepower-icon.svg");
+    display: block;
+    width: 32px;
+    height: 26px;
+  }
+}
+
+.summary__item--volume {
+  &::before {
+    content: url("../../img/icons/volume-icon.svg");
+    display: block;
+    width: 30px;
+    height: 28px;
+  }
+}
+
+.summary__button--order {
+  background-color: $bg-red;
+  color: $font-white;
+  margin-bottom: 16px;
+}
+
+.summary__button--credit {
+  border: 1px solid $bg-red;
+  color: $font-red;
+}

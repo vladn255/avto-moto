@@ -1,0 +1,25 @@
+.main {
+  max-width: $max-width;
+  margin: auto;
+  display: grid;
+  grid-template-areas:
+    "slider summary"
+    "info .";
+  align-items: flex-start;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 57px;
+
+  padding-top: 75px;
+}
+
+.main__slider {
+  grid-area: slider;
+}
+
+.main__summary {
+  grid-area: summary;
+}
+
+.main__info {
+  grid-area: info;
+}

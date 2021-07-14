@@ -1,0 +1,25 @@
+.footer {
+  background-color: $bg-grey;
+
+  padding-top: 26px;
+  padding-bottom: 30px;
+}
+
+.footer__list {
+  max-width: $max-width;
+  padding: 0;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer__item {
+  &:not(:last-of-type) {
+    margin-right: 66px;
+  }
+}
+
+.footer__link {
+  color: $font-grey-dark;
+}
