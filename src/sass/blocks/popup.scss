@@ -1,0 +1,101 @@
+.popup {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.popup__form {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: $bg-grey;
+
+  padding-left: 35px;
+  padding-right: 35px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.popup__legend {
+  margin: auto;
+  font-size: 25px;
+  line-height: 34px;
+}
+
+.popup__container {
+  outline: none;
+  border: none;
+
+  display: grid;
+  grid-template-areas:
+    "name rate"
+    "pros comment"
+    "cons comment";
+
+  column-gap: 28px;
+  row-gap: 16px;
+
+  padding-top: 47px;
+  padding-bottom: 15px;
+}
+
+.popup__rate-wrapper {
+  grid-area: rate;
+}
+
+.popup__input {
+  width: 300px;
+  height: 50px;
+  font-size: 14px;
+  line-height: 19px;
+  color: $font-grey-dark;
+  padding-left: 25px;
+}
+
+.popup__textarea {
+  grid-area: comment;
+  resize: none;
+  width: 300px;
+  height: 118px;
+  font-size: 14px;
+  line-height: 19px;
+  color: $font-grey-dark;
+  padding-left: 25px;
+  padding-top: 15px;
+}
+
+.popup__submit-button {
+  display: block;
+  font-size: 14px;
+  line-height: 19px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: $font-white;
+  background-color: $bg-red;
+
+  margin: auto;
+  padding-left: 20px;
+  padding-right: 21px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.popup--closed {
+  display: none;
+}
+
+.popup__input--name {
+  grid-area: name;
+}
+
+.popup__input--pros {
+  grid-area: pros;
+}
+
+.popup__input--cons {
+  grid-area: cons;
+}

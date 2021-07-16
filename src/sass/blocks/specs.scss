@@ -1,0 +1,17 @@
+.specs {
+  margin: 0;
+  padding: 0;
+  max-width: 600px;
+  padding-top: 30px;
+  padding-right: 35px;
+  margin-bottom: 140px;
+}
+
+.specs__item {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid $decor-grey;
+  padding-bottom: 8px;
+  margin-bottom: 20px;
+}

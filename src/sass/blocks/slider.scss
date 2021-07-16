@@ -45,6 +45,10 @@
   }
 }
 
+.slider__decor {
+  cursor: pointer;
+}
+
 .slider__decor--left {
   order: -1;
   margin-right: 31px;
@@ -57,4 +61,5 @@
 
 .slider__decor--disabled {
   color: $decor-grey;
+  cursor: default;
 }

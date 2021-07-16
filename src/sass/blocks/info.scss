@@ -17,27 +17,11 @@
   background-color: $bg-white;
   font-size: 20px;
   line-height: 27px;
+  cursor: pointer;
 
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.info__list {
-  margin: 0;
-  padding: 0;
-  padding-top: 30px;
-  margin-right: 35px;
-  margin-bottom: 140px;
-}
-
-.info__item {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 1px solid $decor-grey;
-  padding-bottom: 8px;
-  margin-bottom: 20px;
 }
 
 .info__tab-button--active {

@@ -1,0 +1,22 @@
+.reviews {
+  position: relative;
+  padding-top: 10px;
+  margin-bottom: 140px;
+}
+
+.reviews__button {
+  position: absolute;
+  top: 30px;
+  right: 2px;
+  color: $font-red;
+  font-size: 14px;
+  line-height: 19px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background-color: $bg-white;
+  border: 1px solid $bg-red;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 20px;
+  padding-right: 20px;
+}

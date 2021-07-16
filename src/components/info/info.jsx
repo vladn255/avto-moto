@@ -1,55 +1,52 @@
-import React from "react";
+import React, { useState } from "react";
+
+import { Tabs } from "../../const.js";
+
+import Specs from "../specs/specs.jsx";
+import Reviews from "../reviews/reviews.jsx";
+import Contacts from "../contacts/contacts.jsx";
 
 const Info = () => {
+    const [activeTab, setActiveTab] = useState(Tabs.SPECS);
+
+    const handleTabClick = (evt) => {
+        evt.preventDefault();
+        setActiveTab(evt.target.name);
+    }
+
+    const getTabPanel = (tab) => {
+        switch (tab) {
+            case Tabs.SPECS:
+                return <Specs />;
+            case Tabs.REVIEWS:
+                return <Reviews />;
+            case Tabs.CONTACTS:
+                return <Contacts />
+            default:
+                return <Specs />
+        }
+    }
+
     return (
         <section className="main__info info">
             <ul className="info__tab-list">
                 <li className="info__tab">
-                    <button className="info__tab-button info__tab-button--active" type="button">
+                    <button className={`info__tab-button ${activeTab === Tabs.SPECS ? `info__tab-button--active` : ``} `} type="button" name="specs" onClick={handleTabClick}>
                         Характеристики
                     </button>
                 </li>
                 <li className="info__tab">
-                    <button className="info__tab-button" type="button">
+                    <button className={`info__tab-button ${activeTab === Tabs.REVIEWS ? `info__tab-button--active` : ``} `} type="button" name="reviews" onClick={handleTabClick}>
                         Отзывы
                     </button>
                 </li>
                 <li className="info__tab">
-                    <button className="info__tab-button" type="button">
+                    <button className={`info__tab-button ${activeTab === Tabs.CONTACTS ? `info__tab-button--active` : ``} `} type="button" name="contacts" onClick={handleTabClick}>
                         Контакты
                     </button>
                 </li>
             </ul>
-            <ul className="info__list">
-                <li className="info__item">
-                    <span className="info__key">Трансмиссия</span>
-                    <span className="info__value">Роботизированная</span>
-                </li>
-                <li className="info__item">
-                    <span className="info__key">Мощность двигателя, л.с.</span>
-                    <span className="info__value">249</span>
-                </li>
-                <li className="info__item">
-                    <span className="info__key">Тип двигателя</span>
-                    <span className="info__value">Бензиновый</span>
-                </li>
-                <li className="info__item">
-                    <span className="info__key">Привод</span>
-                    <span className="info__value">Полный</span>
-                </li>
-                <li className="info__item">
-                    <span className="info__key">Объем двигателя, л</span>
-                    <span className="info__value">2.4</span>
-                </li>
-                <li className="info__item">
-                    <span className="info__key">Макс.крутящий момент</span>
-                    <span className="info__value">370/4500</span>
-                </li>
-                <li className="info__item">
-                    <span className="info__key">Количество цилиндров</span>
-                    <span className="info__value">4</span>
-                </li>
-            </ul>
+            {getTabPanel(activeTab)}
         </section>
     )
 }

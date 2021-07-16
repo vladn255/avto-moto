@@ -1,0 +1,14 @@
+.stars__item {
+  color: $star-default;
+  margin-right: 5px;
+}
+
+.stars__text {
+  font-size: 15px;
+  line-height: 20px;
+  color: $font-red;
+}
+
+.stars__item--active {
+  color: $star-red;
+}
