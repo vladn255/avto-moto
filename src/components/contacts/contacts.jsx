@@ -1,5 +1,7 @@
 import React from "react";
 
+import Map from "../map/map.jsx";
+
 const Contacts = () => {
     return (
         <div className="contacts">
@@ -29,8 +31,8 @@ const Contacts = () => {
                     </a>
                 </div>
             </div>
-            <div className="contacts__map map">
-
+            <div className="contacts__map" id="map">
+                <Map />
             </div>
         </div>
     )

@@ -19,4 +19,10 @@
   padding-bottom: 16px;
   padding-left: 20px;
   padding-right: 20px;
+
+  &:hover,
+  &:focus {
+    background-color: $bg-red;
+    color: $font-white;
+  }
 }

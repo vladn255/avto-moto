@@ -9,6 +9,10 @@
   color: $font-red;
 }
 
+.stars__label {
+  cursor: pointer;
+}
+
 .stars__item--active {
   color: $star-red;
 }

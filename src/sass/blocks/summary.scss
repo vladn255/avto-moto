@@ -120,9 +120,20 @@
   background-color: $bg-red;
   color: $font-white;
   margin-bottom: 16px;
+
+  &:hover,
+  &:focus {
+    background-color: $bg-red-hover;
+  }
 }
 
 .summary__button--credit {
   border: 1px solid $bg-red;
   color: $font-red;
+
+  &:hover,
+  &:focus {
+    background-color: $bg-red;
+    color: $font-white;
+  }
 }

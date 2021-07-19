@@ -40,11 +40,21 @@
   row-gap: 16px;
 
   padding-top: 47px;
-  padding-bottom: 15px;
+  padding-bottom: 35px;
 }
 
 .popup__rate-wrapper {
   grid-area: rate;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.popup__rate-stars {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  margin-left: 14px;
 }
 
 .popup__input {
@@ -54,10 +64,10 @@
   line-height: 19px;
   color: $font-grey-dark;
   padding-left: 25px;
+  position: relative;
 }
 
 .popup__textarea {
-  grid-area: comment;
   resize: none;
   width: 300px;
   height: 118px;
@@ -66,6 +76,21 @@
   color: $font-grey-dark;
   padding-left: 25px;
   padding-top: 15px;
+}
+
+.popup__input,
+.popup__textarea {
+  label::before {
+    content: "Пожалуйста, заполните поле";
+    display: block;
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: 10px;
+    left: 10px;
+    color: #ff0000;
+    border: 1px solid #ff0000;
+  }
 }
 
 .popup__submit-button {
@@ -82,20 +107,103 @@
   padding-right: 21px;
   padding-top: 16px;
   padding-bottom: 16px;
+
+  &:hover,
+  &:focus {
+    background-color: $bg-red-hover;
+  }
+}
+
+.popup__close-wrapper {
+  position: absolute;
+  top: 20px;
+  right: 14px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 30px;
+  height: 24px;
+
+  margin: auto;
+}
+
+.popup__close,
+.popup__close::before,
+.popup__close::after {
+  background-color: $cross-grey;
+}
+
+.popup__close {
+  padding: 0;
+  padding-right: 30px;
+
+  &::before,
+  &::after {
+    border: none;
+    outline: none;
+    position: absolute;
+    content: "";
+    width: 22px;
+    height: 3px;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
 }
 
 .popup--closed {
   display: none;
 }
 
-.popup__input--name {
+.popup__input-wrapper--name {
   grid-area: name;
 }
 
-.popup__input--pros {
+.popup__input-wrapper--pros {
   grid-area: pros;
 }
 
-.popup__input--cons {
+.popup__input-wrapper--cons {
   grid-area: cons;
+}
+
+.popup__input-wrapper--comment {
+  grid-area: comment;
+}
+
+.popup__input--invalid:required,
+.popup__textarea--invalid {
+  border: 1px solid #ff0000;
+}
+
+.popup__input-wrapper--invalid {
+  position: relative;
+
+  &::before {
+    content: "Пожалуйста, заполните поле";
+    display: block;
+    font-size: 14px;
+    line-height: 19px;
+    position: absolute;
+    top: -26px;
+    left: 10px;
+    color: #ff0000;
+  }
+
+  &::after {
+    content: "*";
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: #ff0000;
+    z-index: 2;
+  }
 }
