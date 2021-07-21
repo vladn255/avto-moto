@@ -29,19 +29,19 @@ const Info = () => {
 
     return (
         <section className="main__info info">
-            <ul className="info__tab-list">
+            <ul className="info__tab-list" onClick={handleTabClick}>
                 <li className="info__tab">
-                    <button className={`info__tab-button ${activeTab === Tabs.SPECS ? `info__tab-button--active` : ``} `} type="button" name="specs" onClick={handleTabClick}>
+                    <button className={`info__tab-button ${activeTab === Tabs.SPECS ? `info__tab-button--active` : ``} `} type="button" name="specs" tabIndex="0">
                         Характеристики
                     </button>
                 </li>
                 <li className="info__tab">
-                    <button className={`info__tab-button ${activeTab === Tabs.REVIEWS ? `info__tab-button--active` : ``} `} type="button" name="reviews" onClick={handleTabClick}>
+                    <button className={`info__tab-button ${activeTab === Tabs.REVIEWS ? `info__tab-button--active` : ``} `} type="button" name="reviews" tabIndex="0">
                         Отзывы
                     </button>
                 </li>
                 <li className="info__tab">
-                    <button className={`info__tab-button ${activeTab === Tabs.CONTACTS ? `info__tab-button--active` : ``} `} type="button" name="contacts" onClick={handleTabClick}>
+                    <button className={`info__tab-button ${activeTab === Tabs.CONTACTS ? `info__tab-button--active` : ``} `} type="button" name="contacts" tabIndex="0">
                         Контакты
                     </button>
                 </li>

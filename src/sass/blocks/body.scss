@@ -1,0 +1,33 @@
+.body {
+  min-height: 100%;
+  background-color: $bg-white;
+  color: $font-grey-dark;
+  font-size: $fs-default;
+  line-height: $lh-default;
+  font-family: $font-family;
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  a {
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  ul,
+  ol {
+    list-style-type: none;
+  }
+
+  button {
+    outline: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+}

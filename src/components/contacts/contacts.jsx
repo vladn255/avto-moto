@@ -1,6 +1,6 @@
 import React from "react";
 
-import Map from "../map/map.jsx";
+import Map from "../map-component/map-component.jsx";
 
 const Contacts = () => {
     return (

@@ -80,6 +80,8 @@
 
 .popup__input,
 .popup__textarea {
+  border: 1px solid rgba(72, 73, 77, 0.2);
+  
   label::before {
     content: "Пожалуйста, заполните поле";
     display: block;
@@ -107,6 +109,7 @@
   padding-right: 21px;
   padding-top: 16px;
   padding-bottom: 16px;
+  border: none;
 
   &:hover,
   &:focus {
@@ -138,6 +141,7 @@
 .popup__close {
   padding: 0;
   padding-right: 30px;
+  border: none;
 
   &::before,
   &::after {

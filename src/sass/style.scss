@@ -1,8 +1,8 @@
 @import "normalize.scss";
 @import "fonts.scss";
 @import "variables.scss";
-@import "global.scss";
 @import "./blocks/app.scss";
+@import "./blocks/body.scss";
 @import "./blocks/contacts.scss";
 @import "./blocks/footer.scss";
 @import "./blocks/header.scss";
@@ -17,3 +17,4 @@
 @import "./blocks/specs.scss";
 @import "./blocks/stars.scss";
 @import "./blocks/summary.scss";
+@import "./blocks/visually-hidden.scss";

@@ -45,16 +45,18 @@
   }
 }
 
-.slider__decor {
+.slider__button {
   cursor: pointer;
+  background-color: $bg-white;
+  border: none;
 }
 
-.slider__decor--left {
+.slider__button--left {
   order: -1;
   margin-right: 31px;
 }
 
-.slider__decor--right {
+.slider__button--right {
   order: 2;
   margin-left: 31px;
 }

@@ -4,19 +4,19 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-left: 20px;
 }
 
 .nav__list {
   margin: 0;
   padding: 0;
+  width: 44%;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   margin-right: 5px;
 }
 
-.nav__item {
-  margin-left: 72px;
-}
 
 .nav__link {
   color: $font-grey-dark;

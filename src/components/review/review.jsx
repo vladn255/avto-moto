@@ -40,7 +40,7 @@ const Review = ({ review: { name, pros, cons, comment, rate } }) => {
 
             <div className="review__footer">
                 <span className="review__time">1 минуту назад</span>
-                <span className="review__respond">Ответить</span>
+                <button className="review__respond" type="button">Ответить</button>
             </div>
 
         </article>
