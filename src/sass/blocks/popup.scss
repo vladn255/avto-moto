@@ -81,7 +81,7 @@
 .popup__input,
 .popup__textarea {
   border: 1px solid rgba(72, 73, 77, 0.2);
-  
+
   label::before {
     content: "Пожалуйста, заполните поле";
     display: block;
@@ -130,6 +130,10 @@
   height: 24px;
 
   margin: auto;
+
+  &:focus {
+    border: 1px solid $font-grey-dark;
+  }
 }
 
 .popup__close,

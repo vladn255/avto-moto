@@ -49,6 +49,10 @@
   cursor: pointer;
   background-color: $bg-white;
   border: none;
+
+  &:focus {
+    border: 1px solid $font-grey-dark;
+  }
 }
 
 .slider__button--left {

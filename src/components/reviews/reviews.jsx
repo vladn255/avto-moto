@@ -24,11 +24,13 @@ const Reviews = () => {
 
     useEffect(() => {
         if (isPopupOpen) {
-            inputNameRef.current.focus();
+            // inputNameRef.current.focus();
             document.addEventListener("keydown", handleReviewButtonKeydown);
+            document.querySelector(".body").classList.add("body--hidden")
         }
         return () => {
             document.removeEventListener("keydown", handleReviewButtonKeydown);
+            document.querySelector(".body").classList.add("body--hidden")
         }
     }, [isPopupOpen]);
 
@@ -45,7 +47,6 @@ const Reviews = () => {
     }
 
     const handleReviewButtonKeydown = (evt) => {
-        evt.preventDefault();
         if (evt.code === ESCAPE) {
             setIsPopupOpen(false)
         }
@@ -97,7 +98,7 @@ const Reviews = () => {
             <ReviewsList reviewList={reviewList} />
             <button className="reviews__button" type="button" onClick={handleReviewButtonClick}>Оставить отзыв</button>
 
-            <div className={`popup ${isPopupOpen ? `` : `popup--closed`}`} tabIndex="0" onKeyDown={handleReviewButtonKeydown} onClick={handlePopupOverlayClick}>
+            <div className={`popup ${isPopupOpen ? `` : `popup--closed`}`} onKeyDown={handleReviewButtonKeydown} onClick={handlePopupOverlayClick} tabIndex="0">
                 <form className="popup__form">
                     <legend className="popup__legend">Оставить отзыв</legend>
                     <div className="popup__container">
@@ -139,7 +140,6 @@ const Reviews = () => {
 
                     <button className="popup__submit-button" type="submit" onClick={handleSubmitClick}>Оставить отзыв</button>
                 </form>
-                <button className="popup__close-button"></button>
             </div>
         </div>
     )
