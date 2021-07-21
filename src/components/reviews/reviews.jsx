@@ -24,13 +24,15 @@ const Reviews = () => {
 
     useEffect(() => {
         if (isPopupOpen) {
-            // inputNameRef.current.focus();
+            inputNameRef.current.focus();
             document.addEventListener("keydown", handleReviewButtonKeydown);
-            document.querySelector(".body").classList.add("body--hidden")
+            document.addEventListener("focusin", handlePopupFocus);
+            document.querySelector(".body").classList.add("body--hidden");
         }
         return () => {
             document.removeEventListener("keydown", handleReviewButtonKeydown);
-            document.querySelector(".body").classList.add("body--hidden")
+            document.removeEventListener("focusin", handlePopupFocus);
+            document.querySelector(".body").classList.remove("body--hidden");
         }
     }, [isPopupOpen]);
 
@@ -54,6 +56,14 @@ const Reviews = () => {
 
     const handleRateChange = (evt) => {
         setCurrentRate(parseInt(evt.target.closest(".stars__label").querySelector("input").value, 10));
+    }
+
+    const handleRateKeydown = (evt) => {
+        if (evt.code === "ArrowLeft" && currentRate >= 1) {
+            setCurrentRate(currentRate - 1)
+        } else if (evt.code === "ArrowRight" && currentRate <= 5) {
+            setCurrentRate(currentRate + 1)
+        }
     }
 
     const checkValidity = () => {
@@ -93,14 +103,20 @@ const Reviews = () => {
         }
     }
 
+    const handlePopupFocus = (evt) => {
+        if (evt.target.closest(".popup") === null) {
+            inputNameRef.current.focus();
+        }
+    }
+
     return (
-        <div className="reviews">
+        <div className="reviews" inert="false">
             <ReviewsList reviewList={reviewList} />
             <button className="reviews__button" type="button" onClick={handleReviewButtonClick}>Оставить отзыв</button>
 
-            <div className={`popup ${isPopupOpen ? `` : `popup--closed`}`} onKeyDown={handleReviewButtonKeydown} onClick={handlePopupOverlayClick} tabIndex="0">
+            <div className={`popup ${isPopupOpen ? `` : `popup--closed`}`} onKeyDown={handleReviewButtonKeydown} onClick={handlePopupOverlayClick} tabIndex="0" role="dialog" aria-labelledby="modal-label" >
                 <form className="popup__form">
-                    <legend className="popup__legend">Оставить отзыв</legend>
+                    <legend className="popup__legend" id="modal-label">Оставить отзыв</legend>
                     <div className="popup__container">
                         <div className={`popup__input-wrapper popup__input-wrapper--name ${isValid ? `` : `popup__input-wrapper--invalid`}`}>
                             <input className={`popup__input popup__input--name ${isValid ? `` : `popup__input--invalid`}`} type="text" placeholder="Имя" name="name" id="name" required onChange={handleInputChange} ref={inputNameRef}></input>
@@ -119,9 +135,9 @@ const Reviews = () => {
 
                         <div className="popup__rate-wrapper">
                             <span className="popup__rate-title">Оцените товар:</span>
-                            <ul className="popup__rate-stars stars">
+                            <ul className="popup__rate-stars stars" tabIndex="0" onKeyDown={handleRateKeydown}>
                                 {[...Array(STAR_COUNT).keys()].map((index) => <li className="popup__rate-item" key={index}>
-                                    <Star key={index} index={index} currentValue={currentRate} handleRateChange={handleRateChange} />
+                                    <Star key={index} index={index + 1} currentValue={currentRate} handleRateChange={handleRateChange} />
                                 </li>)}
                             </ul>
                         </div>
@@ -131,7 +147,7 @@ const Reviews = () => {
                             <label className="visually-hidden" htmlFor="comment">Комментарий</label>
                         </div>
 
-                        <div className="popup__close-wrapper" onClick={handleReviewButtonClick}>
+                        <div className="popup__close-wrapper" onClick={handleReviewButtonClick} tabIndex="0">
                             <button className="popup__close" type="button">
                                 <span className="visually-hidden">Открыть/закрыть меню</span>
                             </button>

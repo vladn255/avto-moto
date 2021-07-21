@@ -55,7 +55,7 @@ Review.propTypes = {
         cons: PropTypes.string.isRequired,
         comment: PropTypes.string.isRequired,
         rate: PropTypes.number.isRequired
-    }).isRequired
+    })
 }
 
 export default Review;

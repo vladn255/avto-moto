@@ -114,6 +114,7 @@
   &:hover,
   &:focus {
     background-color: $bg-red-hover;
+    border: 1px solid $font-black;
   }
 }
 

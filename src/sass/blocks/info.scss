@@ -22,6 +22,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  &:focus {
+    border: 1px solid $font-grey-dark;
+  }
 }
 
 .info__tab-button--active {
