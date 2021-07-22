@@ -56,6 +56,14 @@
   color: $font-red;
   border: none;
   background-color: inherit;
+
+  &:hover {
+    color: $font-grey-dark;
+  }
+
+  &:focus {
+    border: 1px solid $font-red;
+  }
 }
 
 .review__title--pros {
